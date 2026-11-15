@@ -53,6 +53,9 @@ jobs:
       - name: Inspect actual distribution
         working-directory: source/codigo
         run: node scripts/verify-distribution.mjs
+      - name: Install the matching Electron smoke-test runtime
+        working-directory: source/codigo
+        run: node node_modules/electron/install.js
       - name: Open packaged application with an empty isolated profile
         working-directory: source/codigo
         shell: pwsh
